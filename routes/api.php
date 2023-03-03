@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ApiAuthController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\StockTrackerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('v1/auth')->group(function() {
-    Route::post('register', [ApiAuthController::class, 'register']);
-    Route::post('login', [ApiAuthController::class, 'login']);
+Route::prefix('auth')->group(function() {
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
+});
+
+Route::middleware('auth:api')->group(function() {
+    Route::get('stock', [StockTrackerController::class, 'getStock']);
+    Route::get('history', [StockTrackerController::class, 'history']);
 });

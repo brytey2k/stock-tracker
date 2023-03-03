@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ApiLoginRequest;
 use App\Http\Requests\ApiRegisterUserRequest;
 use App\Http\Responses\ApiFailureResponse;
@@ -10,7 +11,7 @@ use App\Http\Responses\UserRegisteredResponse;
 use App\Models\User;
 use Auth;
 
-class ApiAuthController extends Controller
+class AuthController extends Controller
 {
 
     public function register(ApiRegisterUserRequest $request)
