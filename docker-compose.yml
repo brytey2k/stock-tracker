@@ -6,7 +6,7 @@ services:
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: sail-8.2/app
+        image: brytey2k/stock-tracker-php-8.2
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
