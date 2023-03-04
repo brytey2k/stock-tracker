@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Responses\ApiFailureResponse;
 use App\Http\Responses\ApiSuccessResponse;
 use App\Models\StockHistory;
+use App\Notifications\StockQuoteNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -25,12 +26,13 @@ class StockTrackerController extends Controller
                 'name', 'symbol', 'open', 'high', 'low', 'close',
             ]);
 
-            // todo: send email
+            // queue email to be sent
+            $request->user()->notify(new StockQuoteNotification($data));
 
             // save history
             StockHistory::create([
                 'user_id' => $request->user()->id,
-                'data' => json_encode($data),
+                'data' => $data->toJson(),
             ]);
 
             return response()->json($data);
@@ -40,7 +42,7 @@ class StockTrackerController extends Controller
     }
 
     public function history(Request $request) {
-        $history = StockHistory::where('user_id', $request->user()->id)->cursor();
+        $history = StockHistory::where('user_id', $request->user()->id)->latest('created_at')->cursor();
         $histories = [];
         $history->each(function($item) use (&$histories) {
             $data = json_decode($item->data, true);
