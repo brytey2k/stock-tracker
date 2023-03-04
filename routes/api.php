@@ -20,12 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('auth')->group(function() {
-    Route::post('register', [AuthController::class, 'register']);
-    Route::post('login', [AuthController::class, 'login']);
+Route::prefix('auth')->name('auth.')->group(function() {
+    Route::post('register', [AuthController::class, 'register'])->name('register');
+    Route::post('login', [AuthController::class, 'login'])->name('login');
 });
 
 Route::middleware('auth:api')->group(function() {
-    Route::get('stock', [StockTrackerController::class, 'getStock']);
-    Route::get('history', [StockTrackerController::class, 'history']);
+    Route::get('stock', [StockTrackerController::class, 'getStock'])->name('get-stock');
+    Route::get('history', [StockTrackerController::class, 'history'])->name('stock-history');
 });

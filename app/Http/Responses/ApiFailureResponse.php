@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Responsable;
 
 class ApiFailureResponse implements Responsable
 {
-    public function __construct(private string $message)
+    public function __construct(private string $message, private int $errorCode = 401)
     {
     }
 
@@ -16,6 +16,6 @@ class ApiFailureResponse implements Responsable
             'status' => 'error',
             'message' => $this->message,
             'data' => []
-        ]);
+        ], $this->errorCode);
     }
 }

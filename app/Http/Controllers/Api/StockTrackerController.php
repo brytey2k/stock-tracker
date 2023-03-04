@@ -15,8 +15,8 @@ class StockTrackerController extends Controller
     public function getStock(Request $request) {
         $stockTicker = $request->query('q');
 
-        if($stockTicker === '') {
-            return new ApiFailureResponse('Stock ticker is required');
+        if($stockTicker === '' || is_null($stockTicker)) {
+            return new ApiFailureResponse('Stock ticker is required', 400);
         }
 
         $response = Http::get("https://stooq.com/q/l/?s=$stockTicker&f=sd2t2ohlcvn&h&e=json");
@@ -37,7 +37,7 @@ class StockTrackerController extends Controller
 
             return response()->json($data);
         } else {
-            return new ApiFailureResponse('Failed to get stock data.');
+            return new ApiFailureResponse('Failed to get stock data.', 500);
         }
     }
 
