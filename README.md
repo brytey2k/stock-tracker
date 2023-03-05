@@ -26,6 +26,7 @@ This is a system to redeem tickets for events. Features of this system include
 - Run `./setup.sh`
 - Wait for a few seconds before you run `./vendor/bin/sail artisan queue:work`. RabbitMQ may take a while to start up.
 - A Postman collection has been provided for testing the API endpoints. File is in the root of the project `Stock Traker API.postman_collection.json`
+- Subsequent starts of application must use this command `./vendor/bin/sail up -d` and also `./vendor/bin/sail artisan queue:work` (this second command should be a few seconds after running the `up` command)
 
 ### Tasks completed
 - User creation and authentication (using JWT)
