@@ -46,12 +46,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/auth/register",
+					"raw": "{{baseUrl}}/auth/register",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
 						"auth",
 						"register"
 					]
@@ -86,12 +85,11 @@
 					]
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/auth/login",
+					"raw": "{{baseUrl}}/auth/login",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
 						"auth",
 						"login"
 					]
@@ -107,7 +105,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjc3OTMzMTg3LCJleHAiOjE2Nzc5MzY3ODcsIm5iZiI6MTY3NzkzMzE4NywianRpIjoiT0pFc3Jnc1BxT3pUYjdUYSIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.cMh1XAH5sLma37Fr6xAaWxNmppXXB5eYeYviDKBp0iY",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGgvbG9naW4iLCJpYXQiOjE2NzgwNDExMTQsImV4cCI6MTY3ODA0NDcxNCwibmJmIjoxNjc4MDQxMTE0LCJqdGkiOiJMeUdvaUlVd2lDMWdEM2FkIiwic3ViIjoiNiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.EwdOcezyiIkDfE1taoX-fcT2YhXTm_J_P652aHrlh2c",
 							"type": "string"
 						}
 					]
@@ -121,12 +119,11 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/stock?q=aapl.us",
+					"raw": "{{baseUrl}}/stock?q=aapl.us",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
 						"stock"
 					],
 					"query": [
@@ -147,7 +144,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNjc3OTIxNzg5LCJleHAiOjE2Nzc5MjUzODksIm5iZiI6MTY3NzkyMTc4OSwianRpIjoiaUk0RG9oOFBZUWUwY0FmUSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.RUeTdi7CntCoXz2T5Sr4ka3ZgQuVG5Rz-lKap2d26cU",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0L2F1dGgvbG9naW4iLCJpYXQiOjE2NzgwNDExMTQsImV4cCI6MTY3ODA0NDcxNCwibmJmIjoxNjc4MDQxMTE0LCJqdGkiOiJMeUdvaUlVd2lDMWdEM2FkIiwic3ViIjoiNiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.EwdOcezyiIkDfE1taoX-fcT2YhXTm_J_P652aHrlh2c",
 							"type": "string"
 						}
 					]
@@ -161,12 +158,11 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/history",
+					"raw": "{{baseUrl}}/history",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
-						"api",
 						"history"
 					]
 				}
